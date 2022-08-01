@@ -1,0 +1,15 @@
+.purchases-container{
+    margin: 0 200px;
+}
+.purchases-card{
+    border: 1px solid gray;
+    margin: 20px 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    align-items: center;
+}
+.quantity{
+    border: 1px solid gray;
+}
