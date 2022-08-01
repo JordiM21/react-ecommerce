@@ -37,6 +37,8 @@ const ProductDetail = () => {
         dispatch(getProductThunk())
     }, [])
     
+
+
 return (
         <div className='App'>
             <div className='navigate-history'>
@@ -44,7 +46,7 @@ return (
                     <div className='separator'></div>
                     <span>{productsDetail?.title}</span>
             </div>
-            <div className='d-flex'>
+            <div className='detail-align'>
                 <div className='left-div'>
                     <img className='big-img' src={productsDetail.productImgs?.[0]} alt="" />
                     <div className='dis-flex'>

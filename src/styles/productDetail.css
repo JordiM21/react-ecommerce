@@ -26,7 +26,7 @@
 .right-div{
     width: 50%;
     margin-top: 30px;
-    text-align: center;
+    text-align: start;
     padding-top: 10px;
     margin: 10px;
 }
@@ -89,3 +89,17 @@
     margin: 50px 0;
     color: rgba(44, 83, 189);
 }
+@media only screen and (max-width: 700px) {
+    .detail-align{
+        flex-direction:column;
+        justify-content: center;
+        text-align: center;
+    }
+    .left-div{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .right-div{
+        width: 100%;
+    }
+  }

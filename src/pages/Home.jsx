@@ -54,7 +54,7 @@ const Home = () => {
                     </Button>
                 </InputGroup>
             </div>
-            <div className='d-flex'>
+            <div className='home-align'>
             <div className='left'>
             <ListGroup>
                     {

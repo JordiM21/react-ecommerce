@@ -28,8 +28,10 @@ const Purchases = () => {
             <div className='purchases-container'>
                 {
                     purchases?.map(purchase => (
-                        purchase.cart.products.map(product => (
+                        
+                        purchase.cart.products.map(product => (                
                             <div className='purchases-card'>
+                                
                                 <div>
                                     <h2>{product.title}</h2>
                                 </div>
