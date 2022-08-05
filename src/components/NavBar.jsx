@@ -1,11 +1,14 @@
 import React from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import navBar from '../styles/navBar.css'
+
 
 const NavBar = () => {
     return (
+      <div>
         <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/#/">E-commerce</Navbar.Brand>
+          <Navbar.Brand href="/#/"><h3>E-commerce</h3></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -16,6 +19,8 @@ const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      </div>
+        
     );
 };
 

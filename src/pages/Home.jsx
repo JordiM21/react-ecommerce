@@ -37,13 +37,12 @@ const Home = () => {
     return (
         <div>
             <div className='header-container'>
-                <h1>HOME SECTION</h1>
-                <h2>Products</h2>
+                <h1>HOME</h1>
             </div>
             <div>
                 <InputGroup className="mb-3">
                     <Form.Control
-                        placeholder="type a title"
+                        placeholder="what are you looking for?"
                         aria-label="Recipient's username"
                         aria-describedby="basic-addon2"
                         value={searchByTitle}
@@ -57,6 +56,10 @@ const Home = () => {
             <div className='home-align'>
             <div className='left'>
             <ListGroup>
+            <ListGroup.Item disabled>Categories</ListGroup.Item>
+            <ListGroup.Item
+            onClick={() => dispatch(getProductThunk())}
+            >All products</ListGroup.Item>
                     {
                         categories.map(category => (
                             <ListGroup.Item
@@ -88,7 +91,7 @@ const Home = () => {
                                     <p>price:</p>
                                     <p>{product.price}</p>
                                 </Card.Text>
-                                <Button variant="primary">Buy</Button>
+                                <Button>Add to cart</Button>
                             </Card.Body>
                         </Card>
                     ))

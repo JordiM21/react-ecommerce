@@ -85,7 +85,7 @@ return (
                                     <p>price:</p>
                                     <p>{product.price}</p>
                                 </Card.Text>
-                                <Button variant="primary">Buy</Button>
+                                <Button variant="primary">Add to cart</Button>
                             </Card.Body>
                         </Card>
                     ))

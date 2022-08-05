@@ -11,6 +11,7 @@
 }
 .img{
     height: 250px;
+    object-fit: contain;
 }
 .card{
     margin: 20px 15px;
@@ -51,6 +52,9 @@
 .home-align{
     display: flex;
     justify-content:space-around;
+}
+.AddCart{
+    border-radius: 0px;
 }
 @media only screen and (max-width: 700px) {
     .home-align{
