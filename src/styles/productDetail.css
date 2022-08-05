@@ -1,3 +1,9 @@
+.detail-align{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 .dis-flex{
     display: flex;
     justify-content: center;
