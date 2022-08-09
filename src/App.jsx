@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import "bootswatch/dist/litera/bootstrap.min.css";
 import LoadingScreen from './components/LoadingScreen'
 import { useSelector } from 'react-redux/es/exports'
+import ProtectedRoutes from './components/ProtectedRoutes'
 
 
 
@@ -25,7 +26,9 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/detail/:id' element={<ProductDetail/>} />
           <Route path='/login' element={<Login />} />
-          <Route path='/purchases' element={<Purchases />} />
+          <Route element={<ProtectedRoutes/>}>
+            <Route path='/purchases' element={<Purchases />} />
+          </Route>
       </Routes>
      </HashRouter>
     </div>
