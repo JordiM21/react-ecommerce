@@ -77,7 +77,7 @@ return (
                             <div className='hiden-text'>
                                 <strong>{product.description.slice(0, 133)}...</strong>
                             </div>
-                            <Card.Body>
+                            <Card.Body className='cardBody'>
                                 <Card.Title>
                                     <h3>{product.title}</h3>
                                 </Card.Title>
@@ -85,7 +85,7 @@ return (
                                     <p>price:</p>
                                     <p>{product.price}</p>
                                 </Card.Text>
-                                <Button variant="primary">Add to cart</Button>
+                                <button className='buy-button'>Add to cart</button>
                             </Card.Body>
                         </Card>
                     ))

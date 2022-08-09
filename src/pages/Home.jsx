@@ -9,7 +9,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { filterTitleThunk, filterByCategory, getProductThunk } from '../store/slices/product.slice'
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
-
+import heroImg from '../assets/hero-img.png'
 
 const Home = () => {
 
@@ -36,10 +36,8 @@ const Home = () => {
 
     return (
         <div>
-            <div className='header-container'>
-                <h1>HOME</h1>
-            </div>
-            <div>
+            
+            <div className='search-bg'>
                 <InputGroup className="mb-3">
                     <Form.Control
                         placeholder="what are you looking for?"
@@ -48,10 +46,13 @@ const Home = () => {
                         value={searchByTitle}
                         onChange={e => setSearchByTitle(e.target.value)}
                     />
-                    <Button onClick={submit} variant="outline-secondary" id="button-addon2">
+                    <Button style={{backgroundColor: 'white', color: 'blue', fontWeight: '600'}} onClick={submit} variant="outline-secondary" id="button-addon2">
                         Search
                     </Button>
                 </InputGroup>
+                <div className='header-container'>
+                    <img style={{maxWidth: '100%'}} src={heroImg} alt="" />
+                </div>
             </div>
             <div className='home-align'>
             <div className='left'>
@@ -83,15 +84,14 @@ const Home = () => {
                             <div className='hiden-text'>
                                 <strong>{product.description.slice(0, 133)}...</strong>
                             </div>
-                            <Card.Body>
+                            <Card.Body className='cardBody'>
                                 <Card.Title>
                                     <h3>{product.title}</h3>
                                 </Card.Title>
                                 <Card.Text>
-                                    <p>price:</p>
-                                    <p>{product.price}</p>
+                                    <p><span className='reduced-price'>Usd{product.price*2}</span> <span className='discount'> 50% OFF</span><br /> <strong>Usd {product.price}</strong></p>
                                 </Card.Text>
-                                <Button>Add to cart</Button>
+                                <button className='buy-button'>Add to cart</button>
                             </Card.Body>
                         </Card>
                     ))

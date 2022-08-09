@@ -1,7 +1,17 @@
 .header-container{
-    display: flex;
-    justify-content: space-around;
     text-align: center;
+}
+.search-bg{
+    background-color: lightblue;
+}
+.reduced-price{
+    opacity: 0.8;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+.discount{
+    color: rgb(243, 43, 43);
+    font-weight: 800;
 }
 .products{
     display: flex;
@@ -15,7 +25,7 @@
 }
 .card{
     margin: 20px 15px;
-    padding: 10px 10px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 .hiden-text{
@@ -52,9 +62,26 @@
 .home-align{
     display: flex;
     justify-content:space-around;
+    background-color:lightblue;
 }
-.AddCart{
-    border-radius: 0px;
+.buy-button{
+    background-color: rgba(44, 83, 189);
+    width: 100%;
+    border: 0px;
+    padding: 10px;
+    color: white;
+    transition: 0.3s ease;
+    font-weight: 600;
+    border: 1px solid rgba(44, 83, 189);
+}
+.buy-button:hover{
+    background-color: aliceblue;
+    color:rgba(44, 83, 189);
+}
+.cardBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 @media only screen and (max-width: 700px) {
     .home-align{
