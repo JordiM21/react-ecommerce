@@ -1,9 +1,10 @@
 import { Offcanvas, Button } from 'react-bootstrap';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import navBar from '../styles/navBar.css'
-
+import Cart from './Cart';
 
 const NavBar = () => {
 
@@ -19,7 +20,13 @@ const NavBar = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    if (token) {
+      setShow(true)
+    } else {
+      navigate('/login')
+    }
+  }
 
   return (
     <div>
@@ -45,17 +52,7 @@ const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <>
-        <Offcanvas show={show} onHide={handleClose} placement='end'>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
-          </Offcanvas.Body>
-        </Offcanvas>
-      </>
+      <Cart show={show} handleClose={handleClose} />
     </div>
 
   );

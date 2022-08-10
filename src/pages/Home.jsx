@@ -77,10 +77,10 @@ const Home = () => {
                     products.map(product => (
                         <Card className='card' 
                         key={product.id} 
-                        onClick={() => navigate(`/detail/${product.id}`)} 
                         style={{ width: '17rem' }}
                         >
-                            <Card.Img variant="top" className='img' src={product.productImgs[0]} />
+                            <div onClick={() => navigate(`/detail/${product.id}`)} >
+                               <Card.Img variant="top" className='img' src={product.productImgs[0]} />
                             <div className='hiden-text'>
                                 <strong>{product.description.slice(0, 133)}...</strong>
                             </div>
@@ -92,8 +92,11 @@ const Home = () => {
                                     <p><span className='reduced-price'>Usd{product.price*2}</span> <span className='discount'> 50% OFF</span><br /> <strong>Usd {product.price}</strong></p>
                                 </Card.Text>
                                 <button className='buy-button'>Add to cart</button>
-                            </Card.Body>
+                            </Card.Body> 
+                            </div>
+                            <input type="number" />
                         </Card>
+                        
                     ))
                 }
             </div>

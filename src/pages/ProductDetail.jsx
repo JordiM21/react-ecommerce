@@ -50,9 +50,9 @@ return (
                 <div className='left-div'>
                     <img className='big-img' src={productsDetail.productImgs?.[0]} alt="" />
                     <div className='dis-flex'>
-                        <img className='little-img' src={productsDetail.productImgs?.[1]} alt="" />
-                        <img className='little-img' src={productsDetail.productImgs?.[2]} alt="" />                        
-                        <img className='little-img' src={productsDetail.productImgs?.[0]} alt="" />                        
+                        <img className='little-img' src={productsDetail?.productImgs?.[1]} alt="" />
+                        <img className='little-img' src={productsDetail?.productImgs?.[2]} alt="" />                        
+                        <img className='little-img' src={productsDetail?.productImgs?.[0]} alt="" />                        
                     </div>
                 </div>
                 <div className='right-div'>
