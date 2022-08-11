@@ -32,9 +32,9 @@ export const buyCartThunk = () => (dispatch) => {
         .then(() => dispatch(setCart([])))
         .finally(() => dispatch(setIsLoading(false)));
 }
-export const deleteItemFromCart = () => (dispatch) => {
+export const deleteItemFromCart = id => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.delete('https://ecommerce-api-react.herokuapp.com/api/v1/cart/1', getConfig())
+    return axios.delete(`https://ecommerce-api-react.herokuapp.com/api/v1/cart/${id}`, getConfig())
         .then(() => dispatch(getCartThunk()))
         .catch(error => console.log(error.response))
         .finally(() => dispatch(setIsLoading(false)));

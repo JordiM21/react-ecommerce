@@ -97,7 +97,7 @@ return (
                                 </Card.Text>
                             </Card.Body>
                             <div style={{display:'flex', justifyContent: 'center',  height: '2.5rem'}}>
-                            <button onClick={() => navigate(`/detail/${product.id}`)} className='buy-button'>Add to cart</button>
+                            <button onClick={() => navigate(`/detail/${product.id}`)} className='buy-button'>See more</button>
                             </div>
                         </Card>
                     ))
