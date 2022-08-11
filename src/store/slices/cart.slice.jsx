@@ -36,6 +36,7 @@ export const deleteItemFromCart = () => (dispatch) => {
     dispatch(setIsLoading(true));
     return axios.delete('https://ecommerce-api-react.herokuapp.com/api/v1/cart/1', getConfig())
         .then(() => dispatch(getCartThunk()))
+        .catch(error => console.log(error.response))
         .finally(() => dispatch(setIsLoading(false)));
 }
 

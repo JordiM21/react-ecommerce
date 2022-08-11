@@ -5,6 +5,8 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import navBar from '../styles/navBar.css'
 import Cart from './Cart';
+import brandEcommerce from '../assets/brand-ecommerce.png'
+import cart from '../assets/cart.png'
 
 const NavBar = () => {
 
@@ -32,7 +34,7 @@ const NavBar = () => {
     <div>
       <Navbar style={{ backgroundColor: 'rgba(44, 83, 189)' }} expand="lg">
         <Container>
-          <Navbar.Brand style={{ color: 'white' }} href="/#/"><h1>E-commerce</h1></Navbar.Brand>
+          <Navbar.Brand href="/#/"><img src={brandEcommerce} alt="" /></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -46,8 +48,8 @@ const NavBar = () => {
                 )
               }
             </Nav>
-            <Button onClick={handleShow}>
-              My Cart
+            <Button style={{paddingRight: '13px'}} onClick={handleShow}>
+              <img style={{width: '35px'}} src={cart} alt="" />
             </Button>
           </Navbar.Collapse>
         </Container>

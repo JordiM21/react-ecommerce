@@ -50,7 +50,7 @@ const Home = () => {
             <div className='search-bg'>
                 <InputGroup className="mb-3">
                     <Form.Control
-                        placeholder="what are you looking for?"
+                        placeholder="What are you looking for?"
                         aria-label="Recipient's username"
                         aria-describedby="basic-addon2"
                         value={searchByTitle}

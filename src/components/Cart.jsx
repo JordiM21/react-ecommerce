@@ -16,9 +16,13 @@ const Cart = ({show, handleClose}) => {
     useEffect(() => {
         dispatch(getCartThunk())
       }, [])
+
       const buy = () => {
         dispatch(buyCartThunk())
       }
+
+      console.log(productsInCart)
+      
       const deleteProduct = () => {
         alert('deleting product')
         dispatch(deleteItemFromCart())

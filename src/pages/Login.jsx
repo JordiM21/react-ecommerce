@@ -3,6 +3,7 @@ import React from 'react';
 import { Form, Button } from "react-bootstrap";
 import {useForm} from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
+import login from '../styles/login.css'
 
 const Login = () => {
     const { register, handleSubmit, reset} = useForm();
@@ -31,11 +32,15 @@ const Login = () => {
 
     
     return (
-        <div>
-            <h1>LOGIN</h1>
-            <p>Test Email:</p> <br />
+        <div className='login-card'>
+            <h1>LOG IN</h1>
+            <p>Welcome back! You are not logged in but don't worry, you can use our test data below and start shoping!</p>
+            <div className='test-data'>
+            <p>Test Email:</p>
             <p>  email: jordimantilla21@gmail.com <br />
                  password: pass1234</p>
+
+            </div>
             <Form onSubmit={handleSubmit(submit)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
