@@ -76,7 +76,6 @@
     transition: 0.3s ease;
     font-weight: 600;
     border: 1px solid rgba(44, 83, 189);
-    border-radius: 5px 0 0 5px ;
 }
 .buy-button:hover{
     background-color: aliceblue;
