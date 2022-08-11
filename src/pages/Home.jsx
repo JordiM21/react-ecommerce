@@ -10,6 +10,7 @@ import { filterTitleThunk, filterByCategory, getProductThunk } from '../store/sl
 import axios from 'axios';
 import ListGroup from 'react-bootstrap/ListGroup';
 import heroImg from '../assets/hero-img.png'
+import { addToCartThunk } from '../store/slices/cart.slice';
 
 const Home = () => {
 
@@ -33,6 +34,15 @@ const Home = () => {
     const submit = () => {
         dispatch(filterTitleThunk(searchByTitle))
     }
+    //NO ESTA DENTRO DE UN MAP, NO HAY FORMA DE SELECCIONAR EL QUE LE DAMOS CLICK
+    // const addToCart = () => {
+    //     alert('Adding Product to cart')
+    //     const item = {
+    //         id: products.id,
+    //         quantity: "1"
+    //     }
+    //     dispatch(addToCartThunk(item))
+    // }
 
     return (
         <div>
@@ -77,9 +87,9 @@ const Home = () => {
                     products.map(product => (
                         <Card className='card' 
                         key={product.id} 
-                        style={{ width: '17rem' }}
+                        style={{ width: '17rem', display: 'flex', justifyContent:'space-between'}}
                         >
-                            <div onClick={() => navigate(`/detail/${product.id}`)} >
+                            <div>
                                <Card.Img variant="top" className='img' src={product.productImgs[0]} />
                             <div className='hiden-text'>
                                 <strong>{product.description.slice(0, 133)}...</strong>
@@ -89,12 +99,13 @@ const Home = () => {
                                     <h3>{product.title}</h3>
                                 </Card.Title>
                                 <Card.Text>
-                                    <p><span className='reduced-price'>Usd{product.price*2}</span> <span className='discount'> 50% OFF</span><br /> <strong>Usd {product.price}</strong></p>
+                                    <div style={{textAlign: 'center'}}><span className='reduced-price'>Usd{product.price*2}</span> <span className='discount'> 50% OFF</span><br /> <strong>Usd {product.price}</strong></div>
                                 </Card.Text>
-                                <button className='buy-button'>Add to cart</button>
                             </Card.Body> 
                             </div>
-                            <input type="number" />
+                            <div style={{display:'flex', justifyContent: 'center',  height: '2.5rem'}}>
+                            <button onClick={() => navigate(`/detail/${product.id}`)} className='buy-button'>See more</button>
+                            </div>
                         </Card>
                         
                     ))

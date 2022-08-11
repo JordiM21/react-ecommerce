@@ -28,9 +28,14 @@ const Login = () => {
             })
     }
 
+
+    
     return (
         <div>
             <h1>LOGIN</h1>
+            <p>Test Email:</p> <br />
+            <p>  email: jordimantilla21@gmail.com <br />
+                 password: pass1234</p>
             <Form onSubmit={handleSubmit(submit)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>

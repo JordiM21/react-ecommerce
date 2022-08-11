@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getProductThunk } from '../store/slices/product.slice';
 import productDetail from '../styles/productDetail.css'
 import Button from 'react-bootstrap/Button';
+import { addToCartThunk } from '../store/slices/cart.slice';
 
 
 
@@ -15,6 +16,8 @@ const ProductDetail = () => {
     const [productsDetail, setProductsDetail] = useState({})
 
     const [suggestedProduct, setSuggestedProduct] = useState([])
+
+    const [itemAmount, setItemAmount] = useState("1")
 
     const dispatch = useDispatch()
 
@@ -36,9 +39,15 @@ const ProductDetail = () => {
     useEffect(() => {
         dispatch(getProductThunk())
     }, [])
+    const addToCart = () => {
+        alert('Adding Product to cart')
+        const item = {
+            id: productsDetail.id,
+            quantity: itemAmount
+        }
+        dispatch(addToCartThunk(item))
+    }
     
-
-
 return (
         <div className='App'>
             <div className='navigate-history'>
@@ -48,7 +57,7 @@ return (
             </div>
             <div className='detail-align'>
                 <div className='left-div'>
-                    <img className='big-img' src={productsDetail.productImgs?.[0]} alt="" />
+                    <img className='big-img' src={productsDetail?.productImgs?.[0]} alt="" />
                     <div className='dis-flex'>
                         <img className='little-img' src={productsDetail?.productImgs?.[1]} alt="" />
                         <img className='little-img' src={productsDetail?.productImgs?.[2]} alt="" />                        
@@ -58,8 +67,11 @@ return (
                 <div className='right-div'>
                     <h1>{productsDetail?.title}</h1>
                     <p>{productsDetail?.description}</p>
-                    <p>price:<strong>  ${productsDetail.price}</strong></p>
-                    <button>Add to cart</button>
+                    <p>price:<strong>  ${productsDetail?.price}</strong></p>
+                    <div style={{display:'flex', justifyContent:'space-evenly', gap: '20px'}}>
+                        <button onClick={addToCart}>Add to cart</button>
+                        <input value={itemAmount} onChange={e => setItemAmount(e.target.value)} style={{width: '4rem'}} type="number" />
+                    </div>
                 </div>
             </div>
             <div className='suggested-text'>
@@ -69,8 +81,7 @@ return (
             {
                     suggestedProduct.map(product => (
                         <Card className='card' 
-                        key={product.id} 
-                        onClick={() => navigate(`/detail/${product.id}`)} 
+                        key={product.id}  
                         style={{ width: '17rem' }}
                         >
                             <Card.Img variant="top" className='img' src={product.productImgs[0]} />
@@ -82,11 +93,12 @@ return (
                                     <h3>{product.title}</h3>
                                 </Card.Title>
                                 <Card.Text>
-                                    <p>price:</p>
-                                    <p>{product.price}</p>
+                                <div style={{textAlign: 'center'}}><span className='reduced-price'>Usd{product.price*2}</span> <span className='discount'> 50% OFF</span><br /> <strong>Usd {product.price}</strong></div>
                                 </Card.Text>
-                                <button className='buy-button'>Add to cart</button>
                             </Card.Body>
+                            <div style={{display:'flex', justifyContent: 'center',  height: '2.5rem'}}>
+                            <button onClick={() => navigate(`/detail/${product.id}`)} className='buy-button'>Add to cart</button>
+                            </div>
                         </Card>
                     ))
                 }

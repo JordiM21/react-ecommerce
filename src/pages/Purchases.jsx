@@ -26,24 +26,23 @@ const Purchases = () => {
                     <span>Purchases</span>
             </div>
             <div className='purchases-container'>
+
                 {
                     purchases?.map(purchase => (
+                        <div className="purchases-card">
+                            {
+
+                                purchase.cart.products.map(product => (                
+                                    <div className='purchases-item'>  
+                                            <h4 style={{width: '220px'}}>{product.title}</h4>
+                                            <h6 className='quantity'>{product.productsInCart.quantity} x</h6>
+                                            <h6>$ {product.price} c/u</h6>
+                                            <h4>= ${product.productsInCart.quantity*product.price}</h4>
+                                    </div>
+                                ))
+                            }
+                        </div>
                         
-                        purchase.cart.products.map(product => (                
-                            <div className='purchases-card'>
-                                
-                                <div>
-                                    <h2>{product.title}</h2>
-                                </div>
-                                <div>
-                                    <h3 className='quantity'>{product.productsInCart.quantity} x</h3>
-                                    <h3>{product.price}</h3>
-                                </div>
-                                <div>
-                                    <h3>= {product.productsInCart.quantity*product.price}</h3>
-                                </div>
-                            </div>
-                        ))
                     ))
                 }
             </div>

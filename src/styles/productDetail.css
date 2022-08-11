@@ -30,14 +30,14 @@
     width: 6px;
 }
 .right-div{
-    width: 50%;
+    width: 45%;
     margin-top: 30px;
-    text-align: start;
     padding-top: 10px;
-    margin: 10px;
+    margin: 15px;
 }
 .right-div *{
     margin-top: 30px;
+    text-align: start;
 }
 .left-div{
     width: 50%;
