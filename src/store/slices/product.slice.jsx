@@ -15,21 +15,21 @@ export const productSlice = createSlice({
 
 export const getProductThunk = () => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.get('https://ecommerce-api-react.herokuapp.com/api/v1/products')
+    return axios.get('https://e-commerce-api.academlo.tech/api/v1/products')
         .then((res) => dispatch(setProduct(res.data?.data.products)))
         .finally(() => dispatch(setIsLoading(false)));
 }
 
 export const filterTitleThunk = (searchByTitle) => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products?query=${searchByTitle}`)
+    return axios.get(`https://e-commerce-api.academlo.tech/api/v1/products?query=${searchByTitle}`)
         .then((res) => dispatch(setProduct(res.data?.data.products)))
         .finally(() => dispatch(setIsLoading(false)));
 }
 
 export const filterByCategory = (categoryId) => (dispatch) => {
     dispatch(setIsLoading(true));
-    return axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${categoryId}`)
+    return axios.get(`https://e-commerce-api.academlo.tech/api/v1/products?category=${categoryId}`)
         .then((res) => dispatch(setProduct(res.data?.data.products)))
         .finally(() => dispatch(setIsLoading(false)));
 }
