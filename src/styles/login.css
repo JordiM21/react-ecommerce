@@ -1,14 +1,15 @@
-.login-card{
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 30px 400px;
-    align-items: center;
+.login-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px auto;
+	padding: 20px;
+	max-width: 600px;
 }
-.test-data{
-    text-align: start;
-    background-color: rgb(169, 183, 253);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
+.test-data {
+	text-align: start;
+	background-color: rgb(169, 183, 253);
+	padding: 20px;
+	border-radius: 10px;
 }
